@@ -2,7 +2,7 @@
   <configuration default="false" name="Agent" type="Application" factoryName="Application">
     <envs>
       <env name="GOOGLE_GENAI_USE_VERTEXAI" value="false" />
-      <env name="GOOGLE_API_KEY" value="AIzaSyCA-S4KmwD8hfusedVL_zlnYQ7tmCqnQVs" />
+      <env name="GOOGLE_API_KEY" value="YOUR API KEY HERE" /> 
     </envs>
     <option name="MAIN_CLASS_NAME" value="vn.cloud.java_ADK_dry_run" />
     <method v="2">
