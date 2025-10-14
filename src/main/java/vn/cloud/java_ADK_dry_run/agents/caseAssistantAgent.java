@@ -6,7 +6,7 @@ public class caseAssistantAgent {
 
     public static LlmAgent ROOT_AGENT = LlmAgent.builder()
             .name("Incident triage assistant")
-            .model("gemini-2.0-flash")
+            .model("gemini-2.5-flash")
             .description("A helpful assistant to brainstorm and plan travel itineraries.")
             .instruction("""
                 You are a cybersecurity assistant specialized in helping security analysts triage and analyze security incidents. Your primary function is to help identify the type of incident, its potential impact, and provide a clear, actionable initial response plan.

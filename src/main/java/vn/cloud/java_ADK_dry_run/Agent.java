@@ -15,8 +15,8 @@ public class Agent {
 
         LlmAgent llmAgent = LlmAgent.builder()
                 .name("Incident triage assistant")
-                .model("gemini-2.0-flash")
-                .description("A helpful assistant tassist with case triage.")
+                .model("gemini-2.5-flash")
+                .description("A helpful assistant to assist with case triage.")
                 .instruction("""
                 You are a cybersecurity assistant specialized in helping security analysts triage and analyze security incidents. Your primary function is to help identify the type of incident, its potential impact, and provide a clear, actionable initial response plan.
                 
@@ -38,7 +38,7 @@ public class Agent {
 
         Runner runner = new Runner(llmAgent, appName, null, sessionService);
 
-        Content userMsg = Content.fromParts(Part.fromText("I need help on a case, a user has deleted a publicblock access block on an s3 bucket "));
+        Content userMsg = Content.fromParts(Part.fromText("I need to know what to do when a blocked login is seen "));
         Flowable<Event> events = runner.runAsync(userId, session.id(), userMsg);
         events.blockingForEach(event -> System.out.println(event.stringifyContent()));
     }
