@@ -1,10 +1,14 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Agent" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/jdk-21.0.8" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <envs>
+      <env name="GOOGLE_API_KEY" value="AIzaSyC3AY78hQKVvyBU58cVHmJzFIYPDpvuyoo" />
       <env name="GOOGLE_GENAI_USE_VERTEXAI" value="false" />
-      <env name="GOOGLE_API_KEY" value="YOUR API KEY HERE" /> 
+      <env name="POLYGON_API_KEY" value="qk1N9ZiIIYNlNFfP8RXHAvn08p3RFuJC" />
     </envs>
-    <option name="MAIN_CLASS_NAME" value="vn.cloud.java_ADK_dry_run" />
+    <option name="MAIN_CLASS_NAME" value="vn.cloud.java_ADK_dry_run.Agent" />
+    <module name="java_ADK_dry_run.main" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
