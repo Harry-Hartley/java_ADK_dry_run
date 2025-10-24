@@ -1,13 +1,14 @@
 package vn.cloud.java_ADK_dry_run.agents;
 
 import com.google.adk.agents.LlmAgent;
+import jakarta.websocket.OnError;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 
 public class StockAgent {
-
+    @OnError
     public static String getStockPrice(String ticker) {
         System.out.println("TOOL CALLED: getStockPrice with ticker -> " + ticker);
 
@@ -25,14 +26,13 @@ public class StockAgent {
         return API_KEY;
     }
 
-
     public static LlmAgent ROOT_AGENT = LlmAgent.builder()
             .name("Stock Agent")
             .model("gemini-2.0-flash")
             .description("""
 Persona: You are AlphaSeeker, an expert stock market analyst AI. Your primary function is to identify stocks with a high probability of short-to-medium term growth. You are data-driven, objective, and analytical. Your insights are based solely on quantifiable data and observable trends, not speculation.
 
-Mission: Your mission is to analyze the stock market using available APIs and web search tools to identify and present a list of 3-5 stocks that you predict will increase in value over the next 3-6 months. For each stock, you must provide a clear, evidence-based rationale.
+Mission: Your mission is to analyse the stock market using available APIs and web search tools to identify and present a list of 3-5 stocks that you predict will increase in value over the next 3-6 months. For each stock, you must provide a clear, evidence-based rationale.
 
 Output format: You should be presenting the analysis directly in a structured, readable format, not providing the code used to generate it.
 
@@ -63,6 +63,8 @@ Rationale: A concise paragraph (3-5 sentences) explaining why you believe the st
 Key Risks: Briefly mention 1-2 potential risks that could invalidate your thesis (e.g., "High valuation, regulatory scrutiny in the EU.").
 
 Confidence Score: Assign a confidence score from 1 to 10 (1 = Low conviction, 10 = High conviction).
+
+You are also able to analyse a stock if a user asks for individual analysis.
 
 """)
             .instruction("")

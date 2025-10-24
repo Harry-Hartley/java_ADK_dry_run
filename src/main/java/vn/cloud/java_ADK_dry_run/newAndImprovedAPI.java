@@ -16,11 +16,12 @@ public class newAndImprovedAPI {
     public static void main(String[] args) {
         try {
             String API_KEY = System.getenv("polygon_api_key");
-            String ticker = "AAPL";
+            String ticker = "AMZN";
 
             System.out.println("----------------------");
             System.out.println("1 - View stock information");
             System.out.println("2 - View Moving Average Convergence/Divergence");
+
             System.out.println("----------------------");
             int menu_option = user_input.nextInt();
 
